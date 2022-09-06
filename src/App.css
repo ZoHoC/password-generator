@@ -1,0 +1,201 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Properties */
+
+:root {
+  --ff-primary: "Roboto", sans-serif;
+
+  --fw-light: 300;
+  --fw-reg: 400;
+  --fw-bold: 700;
+
+  --clr-light: #fff;
+  --clr-dark: #1f2937;
+  --clr-accent: #f43f5e;
+
+  --fs-h1: 3rem;
+  --fs-body: 1rem;
+  --fs-passwords: 1.2rem;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+/* General styles */
+
+body {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+.App {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 580px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Button */
+.primary--btn {
+  color: var(--clr-light);
+  background-color: var(--clr-accent);
+  border: 2px solid var(--clr-accent);
+  border-radius: 10px;
+  padding: 0.5em 1.5em;
+  font-weight: var(--fw-bold);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+}
+
+/* Typography */
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  margin: 0;
+  line-height: 1;
+}
+
+p {
+  margin: 0;
+}
+
+.accent {
+  color: var(--clr-accent);
+}
+
+/* Hero */
+
+.block--display {
+  display: block;
+  margin-bottom: 0.3em;
+}
+
+.hero--info {
+  margin-bottom: 2em;
+}
+
+.hero--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero--label {
+  width: 180px;
+}
+
+/********** Range Input Styles **********/
+/*Range Reset*/
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  max-width: 20rem;
+  margin-right: auto;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: var(--clr-accent);
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px; /* Centers thumb on the track */
+
+  /*custom styles*/
+  background-color: var(--clr-light);
+  height: 2rem;
+  width: 1rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  border: 1px solid var(--clr-accent);
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 0.125rem;
+}
+
+/******** Firefox styles ********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: var(--clr-accent);
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+
+  /*custom styles*/
+  background-color: var(--clr-light);
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 10px;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  border: 1px solid var(--clr-accent);
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 0.125rem;
+}
+
+/* Password section */
+
+.password--section {
+  margin-top: 3em;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.password--section__block {
+  padding: 5px 1em;
+  border-radius: 10px;
+  background-color: #36404e;
+  font-size: var(--fs-passwords);
+  text-align: center;
+  cursor: pointer;
+}
+
+.password--section__block:hover {
+  background-color: var(--clr-light);
+}
+
+@media (min-width: 800px) {
+  .password--section {
+    align-self: flex-start;
+  }
+}
